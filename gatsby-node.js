@@ -18,7 +18,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   /*   console.log(protectos); */
 
   protectos.forEach(protecto => {
-    /*     console.log(protecto.nombre) */
+    console.log(protecto.nombre)
 
     actions.createPage({
       path: protecto.nombre,

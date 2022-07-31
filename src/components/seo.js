@@ -2,7 +2,7 @@ import * as React from "react"
 // import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
-import img from "../images/logo.png"
+import img from "../images/img.png"
 // import img2 from "../images/logopage.png"
 
 function Seo({ titulo }) {
@@ -86,7 +86,7 @@ function Seo({ titulo }) {
         underline;" )
       </script>
 
-      {/* <link rel="icon" type="ico" href={img}></link> */}
+      <link rel="icon" type="ico" href={img}></link>
     </Helmet>
   )
 }
