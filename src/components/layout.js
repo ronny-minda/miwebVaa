@@ -19,7 +19,9 @@ const Global = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Noto Sans', sans-serif;
+
     scroll-behavior: smooth;
     user-select: none;
   }
@@ -37,6 +39,7 @@ const Global = createGlobalStyle`
     /* height: 100vh; */
     /* position: absolute; */
     width: 100%;
+    background-color: #1C1C1C;
     /* overflow-x: hidden; */
     
     
@@ -48,28 +51,7 @@ const Global = createGlobalStyle`
   
 
   
-  .oscuro  {
-    background-color: #171717;
 
-    &::-webkit-scrollbar-track {
-      background-color: #2E2E2E;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #171717;
-      border-radius: 10px;
-    }
-  }
-  .claro {
-    background-color: #E6E6E6;
-
-    &::-webkit-scrollbar-track {
-      background-color: #CBCBCB;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #E6E6E6;
-      border-radius: 10px;
-    }
-  }
 
   .logoty {
     position: fixed;
@@ -82,58 +64,7 @@ const Global = createGlobalStyle`
 `
 
 const Div = styled.div`
-  position: fixed;
-  z-index: 999999;
-  bottom: 10px;
-  right: 10px;
-  border-radius: 50%;
-  /* background-color: red; */
-  height: 80px;
-  width: 80px;
-  transition: 0.5s background-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  .claro & {
-    /* background-color: #000; */
-    background-color: #fff;
-    svg {
-      height: 70%;
-      width: 70%;
-      fill: #000;
-    }
-    svg:hover {
-      fill: #f00;
-      filter: drop-shadow(0px 0px 5px #f00);
-    }
-  }
-  .oscuro & {
-    /* background-color: #fff; */
-    background-color: #0e0e0e;
-    svg {
-      height: 70%;
-      width: 70%;
-      fill: #fff;
-    }
-    svg:hover {
-      fill: #f00;
-      filter: drop-shadow(0px 0px 5px #f00);
-    }
-  }
-
-  .claro &:active {
-    /* background-color: #000; */
-    transition: none;
-    box-shadow: 3px 3px 5px 0 #0002 inset, -2px -2px 5px #fff inset;
-    background-color: #e6e6e6;
-  }
-  .oscuro &:active {
-    /* background-color: #fff; */
-    transition: none;
-    box-shadow: 3px 3px 5px 0 #040404 inset, -2px -2px 5px #363636 inset;
-    background-color: #171717;
-  }
 `
 
 // const Mause = styled.div`
@@ -230,13 +161,14 @@ const Layout = ({ children }) => {
         <div>
           <Header />
 
-          <main>
+
             {children} {/* LLega el cuerpo de pagina! */}
-          </main>
+
+   
 
           <Footer />
 
-          <Div onClick={modo}>{tema === "claro" ? <Sol /> : <Luna />}</Div>
+          {/* <Div onClick={modo}>{tema === "claro" ? <Sol /> : <Luna />}</Div> */}
         </div>
       </React.StrictMode>
     </>

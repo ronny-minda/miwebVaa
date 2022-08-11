@@ -10,29 +10,32 @@ import Telefono from "../svg/telefono"
 const Ffooter = styled.footer`
   /* display: flex; */
   /* position: absolute; */
+  margin-top: 150px;
   height: 100px;
   transition: 0.5s box-shadow;
 
-  .oscuro & {
-    box-shadow: 0px -8px 6px 0 #040404;
-  }
-  .claro & {
-    box-shadow: 0px -8px 6px 0 #0002;
-  }
+
 `
 
 const Isquierda = styled.div`
   /* background-color: red; */
   position: fixed;
   /* margin-left: 10px; */
-  height: 350px;
+  height: 100%;
   width: 80px;
-  bottom: calc(50% - 175px);
+  /* bottom: calc(50% - 175px); */
   left: 2%;
+  top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+
+  .rayaA {
+    height: 100vmax;
+    width: 3px;
+    background-color: #fff;
+  }
 
   a:active {
     .claro & {
@@ -48,39 +51,28 @@ const Isquierda = styled.div`
   }
 
   a {
+    fill: #fff;
+    margin: 10px 0px;
     transition: 0.2s transform, 0.2s box-shadow;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .claro & {
-      border: 2px solid #ffffff4d;
-      box-shadow: 4px 4px 5px 0 #0002, -4px -4px 5px #fff;
-    }
-    .oscuro & {
-      border: 2px solid #0000004d;
-      box-shadow: 4px 4px 6px 0 #040404, -4px -4px 6px #363636;
-    }
+
 
     svg {
       height: 30px;
       width: 30px;
-      fill: blue;
+      fill: "#fff";
       transition: 0.5s fill;
 
       path {
         border-radius: 0;
       }
-    }
-    .claro & svg {
-      fill: #000;
-    }
-    .oscuro & svg {
-      fill: #fff;
     }
   }
 
@@ -127,7 +119,7 @@ const Section = styled.section`
     transition: 0.5s background-color;
   }
   .claro & {
-    background-color: #e6e6e6;
+    background-color: #FFF1;
     transition: 0.5s background-color;
   }
 
@@ -137,7 +129,7 @@ const Section = styled.section`
   }
   .claro & h4 {
     text-align: center;
-    color: #000;
+    color: #fff;
   }
 `
 
@@ -145,6 +137,7 @@ const Footer = () => {
   return (
     <Ffooter>
       <Isquierda>
+        <div className="rayaA"></div>
         <a
           title="Linkedin"
           href="https://www.linkedin.com/in/ronny-minda-a44261214/"
@@ -189,10 +182,11 @@ const Footer = () => {
         {/* <div className="twitter">twitter</div>
         <div className="gitHub">gitHub</div>
         <div className="telefono">telefono</div> */}
+        <div  className="rayaA"></div>
       </Isquierda>
 
       <Section>
-        <h4>© Sitio construido por Ronny Minda {new Date().getFullYear()}</h4>
+        <h4 id="BACKEND">© Sitio construido por Ronny Minda {new Date().getFullYear()}</h4>
       </Section>
     </Ffooter>
   )

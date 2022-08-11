@@ -3,6 +3,7 @@ import * as React from "react";
 import styled from 'styled-components';
 
 
+
 const Svg = styled.svg`
 
     cursor: pointer;
@@ -21,14 +22,15 @@ const Svg = styled.svg`
     }
 `;
 
+const Logo = ({color}) => {
 
-const Logo = (props) => (
+
+  return (
   <Svg
     width={372.661}
     height="31.9mm"
     viewBox="0 0 98.6 31.9"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
   >
     <g
       style={{
@@ -36,9 +38,10 @@ const Logo = (props) => (
       }}
     >
       <path
+
         style={{
           display: "inline",
-
+          fill: color,
           fillOpacity: 1,
 
           strokeWidth: 0,
@@ -54,7 +57,7 @@ const Logo = (props) => (
         style={{
           display: "inline",
           mixBlendMode: "normal",
-          
+          fill: color,
           fillOpacity: 1,
           
           strokeWidth: 0,
@@ -69,7 +72,7 @@ const Logo = (props) => (
       <path
         style={{
           display: "inline",
-          
+          fill: color,
           fillOpacity: 1,
           
           strokeWidth: 0,
@@ -87,7 +90,7 @@ const Logo = (props) => (
       <path
         style={{
           display: "inline",
-          
+          fill: color,
           fillOpacity: 1,
           
           strokeWidth: 0,
@@ -101,6 +104,7 @@ const Logo = (props) => (
       />
     </g>
   </Svg>
-)
+  )
+}
 
 export default Logo

@@ -8,6 +8,9 @@ module.exports = {
     siteUrl: `https://ronny-minda.github.io/`,
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {

@@ -69,15 +69,8 @@ function Seo({ titulo }) {
       {/* whatsapp */}
 
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-      ></link>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,900&display=swap"
-        rel="stylesheet"
-      ></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;900&display=swap" rel="stylesheet"></link>
 
       <script>
         console.log( "%cHola! ¿Interesado en ofrecerme un puesto en su empresa?
