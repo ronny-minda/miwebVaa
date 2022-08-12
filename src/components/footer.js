@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 import Linkedin from "../svg/linkedin"
 import Twitter from "../svg/twitter"
@@ -12,11 +13,10 @@ const Ffooter = styled.footer`
   /* position: absolute; */
   margin-top: 150px;
   height: 100px;
-  transition: 0.5s box-shadow;
+
 
 
 `
-
 const Isquierda = styled.div`
   /* background-color: red; */
   position: fixed;
@@ -37,23 +37,10 @@ const Isquierda = styled.div`
     background-color: #fff;
   }
 
-  a:active {
-    .claro & {
-      transition: none;
-      box-shadow: 4px 4px 6px 0 #0002, -4px -4px 6px #fff,
-        3px 3px 5px 0 #0002 inset, -2px -2px 5px #fff inset;
-    }
-    .oscuro & {
-      transition: none;
-      box-shadow: 4px 4px 6px 0 #040404, -4px -4px 6px #363636,
-        3px 3px 5px 0 #040404 inset, -2px -2px 5px #363636 inset;
-    }
-  }
-
   a {
     fill: #fff;
     margin: 10px 0px;
-    transition: 0.2s transform, 0.2s box-shadow;
+    transition: 0.2s transform;
     width: 60px;
     height: 60px;
 
@@ -76,7 +63,7 @@ const Isquierda = styled.div`
     }
   }
 
-  a:hover {
+  /* a:hover {
     transform: scale(1.1);
 
     svg {
@@ -84,7 +71,7 @@ const Isquierda = styled.div`
       fill: #f00;
       filter: drop-shadow(0px 0px 20px #f00);
     }
-  }
+  } */
 
   @media (max-width: 600px) {
     padding-top: 10px;
@@ -136,48 +123,71 @@ const Section = styled.section`
 const Footer = () => {
   return (
     <Ffooter>
+      
+      <motion.div
+        whileHover={{ scale: 2 }}
+        whileTap={{ scale: 1 }}
+      >
+
+      </motion.div>
       <Isquierda>
         <div className="rayaA"></div>
-        <a
+        <motion.a
+          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
+          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
+          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
           title="Linkedin"
           href="https://www.linkedin.com/in/ronny-minda-a44261214/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Linkedin />
-        </a>
-        <a
+        </motion.a>
+        
+        <motion.a
+          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
+          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
+          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
           title="Correo"
           href="mailto:ronny.michael.minda.vera@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Correo />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
+          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
+          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
           title="GitHub"
           href="https://github.com/ronny-minda"
           target="_blank"
           rel="noopener noreferrer"
         >
           <GitHub />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
+          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
+          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
           title="Twitter"
           href="https://twitter.com/MichaelMinda7"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Twitter />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
+          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
+          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
           title="Telefono"
           href="tel:0993105654"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Telefono />
-        </a>
+        </motion.a>
 
         {/* <div className="twitter">twitter</div>
         <div className="gitHub">gitHub</div>

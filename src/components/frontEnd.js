@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
+import { motion } from "framer-motion";
 
 
 const Section = styled.section`
@@ -80,6 +81,15 @@ const FromEnd = () => {
 
     return (
         <Section>
+
+            <motion.div
+                className="divCont"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 1 }}
+            >
+
             <h3 id="PORTAFOLIO">Proyectos del lado del Frontend</h3>
             <div className="conteFron">
 
@@ -147,7 +157,7 @@ const FromEnd = () => {
 
 
 
-{
+                {
                     imgesta == 4 ? (<div className="cart">
                     <StaticImage
                         class="imgI"
@@ -255,6 +265,10 @@ const FromEnd = () => {
                 <div onClick={ () => imgesta < 10 ? setImgesta(imgesta + 1) : null } className="botonDere"></div>
                 
             </div>
+
+            </motion.div>
+
+            
         </Section>
     )
 

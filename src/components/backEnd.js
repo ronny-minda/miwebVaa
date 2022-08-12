@@ -76,7 +76,197 @@ const BackEnd = () => {
 
   return (
     <Section>
-      <AnimatePresence>
+
+        <motion.div
+            className="divCont"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 1 }}
+        >
+
+        <h3>Proyectos del lado del Frontend</h3>
+        <div className="conteFron">
+          {/* <div className="cart">
+
+                  </div> */}
+
+          {imgesta == 0 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/0.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 1 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/1.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 2 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/2.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 3 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/3.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+
+          {imgesta == 4 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/4.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 5 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/5.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 6 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/6.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 7 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/7.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 8 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/8.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 9 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/9.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+          {imgesta == 10 ? (
+            <div className="cart">
+              <StaticImage
+                class="imgI"
+                src={`../images/imgData/10.png`}
+                alt="A dinosaur"
+                placeholder="blurred"
+                layout="fullWidth"
+                objectFit="fill"
+                //    width={1000}
+                //    height={400}
+              />
+            </div>
+          ) : null}
+
+          <div className="verCodigo">ver codigo</div>
+
+          <div
+            onClick={() => (imgesta > 0 ? setImgesta(imgesta - 1) : null)}
+            className="botonIz"
+          ></div>
+          <div
+            onClick={() => (imgesta < 10 ? setImgesta(imgesta + 1) : null)}
+            className="botonDere"
+          ></div>
+        </div>
+      </motion.div>
+    </Section>
+  )
+}
+
+export default BackEnd
+
+
+{/* <AnimatePresence>
         {false && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -87,183 +277,4 @@ const BackEnd = () => {
             asdfssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
           </motion.div>
         )}
-      </AnimatePresence>
-
-      <h3>Proyectos del lado del Frontend</h3>
-      <div className="conteFron">
-        {/* <div className="cart">
-
-                </div> */}
-
-        {imgesta == 0 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/0.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 1 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/1.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 2 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/2.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 3 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/3.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-
-        {imgesta == 4 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/4.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 5 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/5.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 6 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/6.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 7 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/7.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 8 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/8.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 9 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/9.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-        {imgesta == 10 ? (
-          <div className="cart">
-            <StaticImage
-              class="imgI"
-              src={`../images/imgData/10.png`}
-              alt="A dinosaur"
-              placeholder="blurred"
-              layout="fullWidth"
-              objectFit="fill"
-              //    width={1000}
-              //    height={400}
-            />
-          </div>
-        ) : null}
-
-        <div className="verCodigo">ver codigo</div>
-
-        <div
-          onClick={() => (imgesta > 0 ? setImgesta(imgesta - 1) : null)}
-          className="botonIz"
-        ></div>
-        <div
-          onClick={() => (imgesta < 10 ? setImgesta(imgesta + 1) : null)}
-          className="botonDere"
-        ></div>
-      </div>
-    </Section>
-  )
-}
-
-export default BackEnd
+      </AnimatePresence> */}

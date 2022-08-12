@@ -9,6 +9,7 @@ import SobreMi from "../components/sobreMi"
 import FromEnd from "../components/frontEnd"
 import BackEnd from "../components/backEnd"
 import Contacto from "../components/contacto"
+import Principal from "../components/principal"
 
 
 const Main = styled.main`
@@ -139,15 +140,7 @@ const IndexPage = () => {
    
             <div className="spa">
 
-              <div className="contenido">
-
-                <div className="nombre">
-                  <h1>RONNY MINDA V.</h1>
-                  <h2>Desarrollador de Software</h2>
-                </div>
-                
-                <div className="imgPrincipal"></div>
-              </div>
+              <Principal />
 
               <SobreMi />
 

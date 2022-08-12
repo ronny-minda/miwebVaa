@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 
 const Section = styled.section`
     margin: 300px 0;
@@ -102,15 +102,23 @@ const SobreMi = () => {
     return (
         <Section>
 
-            <div id="ABOUT" className="conte">
-                <div className="imgPerfil"></div>
-                <div className="som"></div>
-                <div className="descripcion">
-                    <h3>ABOUT ME</h3>
-                    <p>¡Hola! Mis conocimientos en en pedidos api rest de lado frontend y desarrollo de api rest de lado backend con node y sus respectivas validaciones administracion de roles.</p>
+            <motion.div
+                className="divCont"
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 1 }}
+            >
+
+                <div id="ABOUT" className="conte">
+                    <div className="imgPerfil"></div>
+                    <div className="som"></div>
+                    <div className="descripcion">
+                        <h3>ABOUT ME</h3>
+                        <p>¡Hola! Mis conocimientos en en pedidos api rest de lado frontend y desarrollo de api rest de lado backend con node y sus respectivas validaciones administracion de roles.</p>
+                    </div>
                 </div>
-            </div>
-        
+            </motion.div>
         </Section>
     )
 }
