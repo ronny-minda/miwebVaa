@@ -76,15 +76,13 @@ const BackEnd = () => {
 
   return (
     <Section>
-
-        <motion.div
-            className="divCont"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 1 }}
-        >
-
+      <motion.div
+        className="divCont"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 1 }}
+      >
         <h3>Proyectos del lado del Frontend</h3>
         <div className="conteFron">
           {/* <div className="cart">
@@ -265,16 +263,15 @@ const BackEnd = () => {
 
 export default BackEnd
 
-
-{/* <AnimatePresence>
-        {false && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            asdfssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          </motion.div>
-        )}
-      </AnimatePresence> */}
+// <AnimatePresence>
+//   {false && (
+//     <motion.div
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       exit={{ opacity: 0 }}
+//       transition={{ duration: 1 }}
+//     >
+//       asdfssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+//     </motion.div>
+//   )}
+// </AnimatePresence>

@@ -13,9 +13,6 @@ const Ffooter = styled.footer`
   /* position: absolute; */
   margin-top: 150px;
   height: 100px;
-
-
-
 `
 const Isquierda = styled.div`
   /* background-color: red; */
@@ -44,12 +41,9 @@ const Isquierda = styled.div`
     width: 60px;
     height: 60px;
 
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 
     svg {
       height: 30px;
@@ -106,7 +100,7 @@ const Section = styled.section`
     transition: 0.5s background-color;
   }
   .claro & {
-    background-color: #FFF1;
+    background-color: #fff1;
     transition: 0.5s background-color;
   }
 
@@ -123,19 +117,16 @@ const Section = styled.section`
 const Footer = () => {
   return (
     <Ffooter>
-      
       <motion.div
         whileHover={{ scale: 2 }}
         whileTap={{ scale: 1 }}
-      >
-
-      </motion.div>
+      ></motion.div>
       <Isquierda>
         <div className="rayaA"></div>
         <motion.a
-          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
-          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
-          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
+          whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Linkedin"
           href="https://www.linkedin.com/in/ronny-minda-a44261214/"
           target="_blank"
@@ -143,11 +134,11 @@ const Footer = () => {
         >
           <Linkedin />
         </motion.a>
-        
+
         <motion.a
-          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
-          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
-          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
+          whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Correo"
           href="mailto:ronny.michael.minda.vera@gmail.com"
           target="_blank"
@@ -156,9 +147,9 @@ const Footer = () => {
           <Correo />
         </motion.a>
         <motion.a
-          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
-          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
-          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
+          whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
           title="GitHub"
           href="https://github.com/ronny-minda"
           target="_blank"
@@ -167,9 +158,9 @@ const Footer = () => {
           <GitHub />
         </motion.a>
         <motion.a
-          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
-          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
-          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
+          whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Twitter"
           href="https://twitter.com/MichaelMinda7"
           target="_blank"
@@ -178,9 +169,9 @@ const Footer = () => {
           <Twitter />
         </motion.a>
         <motion.a
-          whileHover={{ rotate: 0, scale: 2, fill: '#f00' }}
-          whileTap={{ rotate: 0, scale: 1, fill: '#fff' }}
-          transition={{ duration: 0.1, ease: 'easeInOut', type: 'tween' }}
+          whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Telefono"
           href="tel:0993105654"
           target="_blank"
@@ -192,11 +183,13 @@ const Footer = () => {
         {/* <div className="twitter">twitter</div>
         <div className="gitHub">gitHub</div>
         <div className="telefono">telefono</div> */}
-        <div  className="rayaA"></div>
+        <div className="rayaA"></div>
       </Isquierda>
 
       <Section>
-        <h4 id="BACKEND">© Sitio construido por Ronny Minda {new Date().getFullYear()}</h4>
+        <h4 id="BACKEND">
+          © Sitio construido por Ronny Minda {new Date().getFullYear()}
+        </h4>
       </Section>
     </Ffooter>
   )

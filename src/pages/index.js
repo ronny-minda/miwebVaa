@@ -11,12 +11,10 @@ import BackEnd from "../components/backEnd"
 import Contacto from "../components/contacto"
 import Principal from "../components/principal"
 
-
 const Main = styled.main`
   margin-top: 66px;
   display: flex;
   justify-content: center;
-
 
   .spacio {
     /* background-color: red; */
@@ -28,7 +26,7 @@ const Main = styled.main`
     .spacio {
       width: 0%;
     }
-  } 
+  }
 
   .spa {
     width: 100%;
@@ -54,14 +52,15 @@ const Main = styled.main`
         h2 {
           font-size: 30px;
           color: #fff;
+          -webkit-text-stroke: 1px #fff;
+          color: #fff0;
         }
-        
       }
 
       @media (max-width: 1005px) {
         .nombre {
           h1 {
-          font-size: 35px;
+            font-size: 35px;
           }
           h2 {
             font-size: 20px;
@@ -80,12 +79,9 @@ const Main = styled.main`
               font-size: 16px;
             }
           }
-        
         }
       }
 
-
-      
       .imgPrincipal {
         height: 100vh;
         width: 50%;
@@ -97,7 +93,6 @@ const Main = styled.main`
         }
       }
     }
-
   }
   @media (max-width: 800px) {
     .spa {
@@ -106,9 +101,8 @@ const Main = styled.main`
   }
 
   @media (max-width: 600px) {
-    
-  } 
-`;
+  }
+`
 
 const IndexPage = () => {
   const [loader, setLoader] = useState(true)
@@ -121,8 +115,6 @@ const IndexPage = () => {
     <>
       <Seo titulo="Ronny Minda V." />
 
-
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -132,14 +124,12 @@ const IndexPage = () => {
         {/* <Loader /> */}
 
         <Layout>
-
           <Loader />
 
           <Main>
             <div id="HOME" className="spacio"></div>
-   
-            <div className="spa">
 
+            <div className="spa">
               <Principal />
 
               <SobreMi />
@@ -147,11 +137,7 @@ const IndexPage = () => {
               <FromEnd />
               <BackEnd />
               <Contacto />
-
             </div>
-
-            
-
           </Main>
 
           {/* <Div /> */}

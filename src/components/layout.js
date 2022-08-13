@@ -45,8 +45,14 @@ const Global = createGlobalStyle`
     
   }
   body::-webkit-scrollbar {
-    width: 12px;
+    width: 4px;
+    background-color: #f008;
   }
+
+  body::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 10px;
+}
 
   
 
@@ -63,9 +69,7 @@ const Global = createGlobalStyle`
   }
 `
 
-const Div = styled.div`
-
-`
+const Div = styled.div``
 
 // const Mause = styled.div`
 //   background-color: #0CFF00;
@@ -160,14 +164,8 @@ const Layout = ({ children }) => {
 
         <div>
           <Header />
-
-
-            {children} {/* LLega el cuerpo de pagina! */}
-
-   
-
+          {children} {/* LLega el cuerpo de pagina! */}
           <Footer />
-
           {/* <Div onClick={modo}>{tema === "claro" ? <Sol /> : <Luna />}</Div> */}
         </div>
       </React.StrictMode>
