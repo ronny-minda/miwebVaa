@@ -126,7 +126,7 @@ const Header = () => {
 
       <nav>
         <li>
-          <Link href="/#HOME">HOME</Link>
+          <Link to="/#HOME">HOME</Link>
           <div className="under"></div>
         </li>
         <li>
@@ -158,7 +158,7 @@ const Header = () => {
             >
               <div className={Cli}>
                 <li>
-                  <a href="/#HOME">HOME</a>
+                  <Link to="/#HOME">HOME</Link>
                 </li>
                 <li>
                   <Link to="/#ABOUT">ABOUT</Link>

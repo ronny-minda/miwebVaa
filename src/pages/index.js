@@ -11,6 +11,8 @@ import BackEnd from "../components/backEnd"
 import Contacto from "../components/contacto"
 import Principal from "../components/principal"
 
+import imgFondo from "../images/fondo.jpg"
+
 const Main = styled.main`
   margin-top: 66px;
   display: flex;
@@ -47,12 +49,12 @@ const Main = styled.main`
         h1 {
           margin-bottom: 20px;
           font-size: 50px;
-          color: #fff;
+          color: #dde4ff;
         }
         h2 {
           font-size: 30px;
-          color: #fff;
-          -webkit-text-stroke: 1px #fff;
+          color: #dde4ff;
+          -webkit-text-stroke: 1px #dde4ff;
           color: #fff0;
         }
       }
@@ -74,18 +76,35 @@ const Main = styled.main`
             position: absolute;
             h1 {
               font-size: 30px;
+              text-align: center;
             }
             h2 {
               font-size: 16px;
+              text-align: center;
             }
           }
         }
       }
 
       .imgPrincipal {
+        background-color: red;
         height: 100vh;
         width: 50%;
-        background-color: red;
+        /* background-image: url("https://i.blogs.es/ea406c/haloin/1366_2000.jpeg"); */
+        background-image: url(${imgFondo});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .filtro {
+          /* opacity: 0.7; */
+          /* backdrop-filter: opacity(0%); */
+          /* filter: opacity(100%); */
+          /* backdrop-filter: blur(1px); */
+          height: 100%;
+          width: 100%;
+          background-color: #5e0000b8;
+        }
       }
       @media (max-width: 770px) {
         .imgPrincipal {
@@ -121,8 +140,6 @@ const IndexPage = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* <Loader /> */}
-
         <Layout>
           <Loader />
 

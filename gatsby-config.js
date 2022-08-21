@@ -42,11 +42,11 @@ module.exports = {
         icon: `src/images/img.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-datocms`,
-      options: {
-        apiToken: `51b6e6dbbbc89d4ca56c63c5a26c7a`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-datocms`,
+    //   options: {
+    //     apiToken: `51b6e6dbbbc89d4ca56c63c5a26c7a`,
+    //   },
+    // },
   ],
 }

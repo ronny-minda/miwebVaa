@@ -1,78 +1,139 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
-import img from "../images/imgData/0.png"
-import { AnimatePresence, motion } from "framer-motion"
+// import { StaticImage } from "gatsby-plugin-image"
+import { motion, AnimatePresence } from "framer-motion"
+// import { v4 as uuidv4 } from "uuid"
+
+// import { imagenes } from "../components/imagenesCarru"
+// import Flecha from "../svg/flecha"
+import GitHub from "../svg/gitHub"
 
 const Section = styled.section`
   /* background-color: red; */
+  position: relative;
   margin: 150px 0;
 
   h3 {
-    color: #fff;
+    color: #dde4ff;
     font-size: 25px;
-    padding-left: 15px;
+    padding-left: 30px;
+    margin-bottom: 30px;
   }
 
   .conteFron {
-    height: 500px;
-    width: auto;
-    /* background-color: #c1bbd1; */
-    /* display: flex;
-        justify-content: center;
-        align-items: center; */
+    margin-left: 15px;
+    height: 400px;
+    display: block;
+    /* background-color: red; */
+    border: 2px solid red;
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .verCodigo {
-      backdrop-filter: blur(5px);
-      position: absolute;
-      bottom: 50px;
-      padding: 10px 20px;
-      border-radius: 3px;
-      border: 2px solid #fff;
-      color: #fff;
-      background-color: #0009;
-    }
-    .verCodigo:active {
-      background-color: #c1bbd1;
-    }
 
     .cart {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      /* background-color: aquamarine; */
-      height: auto;
-      width: 90%;
-      max-width: 1000px;
+      background-color: #dde4ff;
+      width: 300px;
+      height: 90%;
+      position: absolute;
+      top: calc(50% - 180px);
+      left: calc(50% - 150px);
+      list-style: none;
+      display: flex;
 
-      .imgI {
+      .iz {
+        height: 100%;
+        width: 80%;
+        background-color: #dde4ff;
+        padding: 0px 0 0 20px;
+
+        h3 {
+          margin-top: 20px;
+          padding: 0;
+          font-size: 20px;
+          color: #000;
+        }
+        h4 {
+          color: #000;
+        }
+        li {
+          color: #000;
+          margin: 5px 0;
+        }
+        a {
+          text-decoration: none;
+          color: #000;
+          background-color: #f00;
+          padding: 3px 15px;
+          border-radius: 3px;
+          margin-top: 50px;
+          transition: 0.3s;
+        }
+        a:hover {
+          background-color: #ff5555;
+        }
+      }
+      .der {
+        height: 100%;
+        width: 20%;
+        background-color: #0005;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
-    .botonDere {
-      height: 50px;
-      width: 50px;
-      background-color: #000;
+    .botonNext {
+      height: 40px;
+      width: 200px;
+      background-color: #f00;
       position: absolute;
-      top: 50%;
-      right: 10px;
+      bottom: -40px;
+      left: calc(50% - 100px);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      border-radius: 3px;
     }
-    .botonIz {
-      height: 50px;
-      width: 50px;
-      background-color: #000;
-      position: absolute;
-      top: 50%;
-      left: 10px;
+    .botonNext:hover {
+      background-color: #ff5555;
     }
   }
 `
 
-const BackEnd = () => {
-  const [imgesta, setImgesta] = useState(0)
+const messages = [
+  {
+    id: 1,
+    titulo: "Backend tienda de ropa",
+    descrip: "",
+    tecnologias: ["NODE", "EXPRESS", "JSON WEB TOKEN", "BCRYPT"],
+    link: "https://github.com/ronny-minda/TIENDA-ROPA-BACKEND",
+  },
+  {
+    id: 2,
+    titulo: "Backend Envio De Correo",
+    descrip: "",
+    tecnologias: ["NODE", "NODEMAILER"],
+    link: "https://github.com/ronny-minda/Api_rest_correo_nodemailer",
+  },
+  {
+    id: 3,
+    titulo: "Api Simple Node",
+    descrip: "",
+    tecnologias: ["NODE"],
+    link: "https://github.com/ronny-minda/Api_Simple_Node",
+  },
+  {
+    id: 4,
+    titulo: "Control de Clientes(BACKEND)",
+    descrip: "",
+    tecnologias: ["NODEJS", "APOLLO SERVER", "MONGODB"],
+    link: "https://github.com/ronny-minda/GRAPHQL-Apollo-Server-ControlDeClientes",
+  },
+]
 
-  console.log(imgesta)
+const BackEnd = () => {
+  const [imgesta, setImgesta] = useState(1)
+  // const [direction, setDirection] = useState(true)
 
   return (
     <Section>
@@ -81,180 +142,61 @@ const BackEnd = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.4, duration: 1 }}
+        transition={{ delay: 0.4, duration: 1, type: "spring" }}
       >
-        <h3>Proyectos del lado del Frontend</h3>
+        <h3 id="PORTAFOLIO">Proyectos del lado del BackEnd</h3>
+
         <div className="conteFron">
-          {/* <div className="cart">
+          <AnimatePresence>
+            {messages.map(({ id, titulo, descrip, tecnologias, link }) => {
+              return id === imgesta ? (
+                <motion.li
+                  className="cart"
+                  key={id}
+                  initial={{ opacity: 0, x: 500 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -500 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="iz">
+                    <h3>{titulo}</h3>
+                    <h4>Tecnologias</h4>
+                    {tecnologias.map((i, e) => (
+                      <li>- {i}</li>
+                    ))}
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      Ver codigo
+                    </a>
+                  </div>
 
-                  </div> */}
-
-          {imgesta == 0 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/0.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 1 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/1.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 2 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/2.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 3 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/3.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-
-          {imgesta == 4 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/4.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 5 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/5.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 6 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/6.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 7 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/7.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 8 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/8.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 9 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/9.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-          {imgesta == 10 ? (
-            <div className="cart">
-              <StaticImage
-                class="imgI"
-                src={`../images/imgData/10.png`}
-                alt="A dinosaur"
-                placeholder="blurred"
-                layout="fullWidth"
-                objectFit="fill"
-                //    width={1000}
-                //    height={400}
-              />
-            </div>
-          ) : null}
-
-          <div className="verCodigo">ver codigo</div>
-
-          <div
-            onClick={() => (imgesta > 0 ? setImgesta(imgesta - 1) : null)}
-            className="botonIz"
-          ></div>
-          <div
-            onClick={() => (imgesta < 10 ? setImgesta(imgesta + 1) : null)}
-            className="botonDere"
-          ></div>
+                  <motion.a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ fill: "#f00" }}
+                    whileTap={{ fill: "#dde4ff" }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="der"
+                  >
+                    <GitHub />
+                  </motion.a>
+                </motion.li>
+              ) : null
+            })}
+          </AnimatePresence>
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 1 }}
+            transition={{ duration: 0.1, ease: "easeInOut" }}
+            className="botonNext"
+            onClick={() =>
+              imgesta < messages.length
+                ? setImgesta(imgesta + 1)
+                : setImgesta(1)
+            }
+          >
+            Siguiente proyecto
+          </motion.div>
         </div>
       </motion.div>
     </Section>
@@ -263,7 +205,7 @@ const BackEnd = () => {
 
 export default BackEnd
 
-// <AnimatePresence>
+// <AnimatePresence>BackEnd
 //   {false && (
 //     <motion.div
 //       initial={{ opacity: 0 }}

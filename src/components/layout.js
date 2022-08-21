@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled, { createGlobalStyle } from "styled-components"
-/* import { AnimatePresence, motion } from 'framer-motion';
-import { useLocation } from '@reach/router'; */
+import { AnimatePresence, motion } from "framer-motion"
+import { useLocation } from "@reach/router"
 /* import { StaticImage } from 'gatsby-plugin-image'; */
 
 import Footer from "./footer"
@@ -24,11 +24,13 @@ const Global = createGlobalStyle`
 
     scroll-behavior: smooth;
     user-select: none;
+    
   }
   *, *:before, *::after {
       box-sizing: inherit;
   } 
   body {
+    overflow-x: hidden;
     /* background-color: #20232c; */
     /* background-image: linear-gradient(to left, #1a1d27, #1c202e, #1f2434, #21273b, #232b42); */
     /* background-image: linear-gradient(to right top, #78808b, #616975, #4a535f, #353d4a, #212936); */
@@ -52,9 +54,10 @@ const Global = createGlobalStyle`
   body::-webkit-scrollbar-thumb {
     background: #000;
     border-radius: 10px;
-}
+  }
 
   
+
 
   
 
@@ -103,56 +106,72 @@ const Layout = ({ children }) => {
 
   console.log(location); */
 
-  // React.useEffect(() => {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  })
 
-  //   window.addEventListener('mousemove', (e) => {
-  //     const mause = document.querySelector('.mause');
-  //     const y = e.pageY;
-  //     const x = e.pageX;
+  React.useEffect(() => {
+    window.addEventListener("mousemove", e => {
+      // const mause = document.querySelector(".mause")
+      const y = e.pageY - window.top.scrollY
+      const x = e.pageX
 
-  //     mause.style.left = `${x - 10}px`;
-  //     mause.style.top = `${y - 10}px`;
+      // console.log(x)
+      // console.log(y - window.top.scrollY)
 
-  //     // console.log({x});
-  //     // console.log({y});
-  //   })
-
-  // }, [])
-
-  useEffect(() => {
-    let defecto = localStorage.getItem("tema")
-
-    if (!defecto) {
-      localStorage.setItem("tema", "claro")
-    }
+      setPosition({
+        x: x - 25,
+        y: y - 25,
+      })
+    })
   }, [])
 
-  const [tema, setTema] = useState("")
+  // useEffect(() => {
+  //   let defecto = localStorage.getItem("tema")
 
-  useEffect(() => {
-    let defecto = localStorage.getItem("tema")
+  //   if (!defecto) {
+  //     localStorage.setItem("tema", "claro")
+  //   }
+  // }, [])
 
-    setTema(defecto)
-  }, [tema])
+  // const [tema, setTema] = useState("")
 
-  const modo = () => {
-    if (tema === "oscuro") {
-      setTema("claro")
-      localStorage.setItem("tema", "claro")
-    } else {
-      setTema("oscuro")
-      localStorage.setItem("tema", "oscuro")
-    }
-  }
+  // useEffect(() => {
+  //   let defecto = localStorage.getItem("tema")
+
+  //   setTema(defecto)
+  // }, [tema])
+
+  // const modo = () => {
+  //   if (tema === "oscuro") {
+  //     setTema("claro")
+  //     localStorage.setItem("tema", "claro")
+  //   } else {
+  //     setTema("oscuro")
+  //     localStorage.setItem("tema", "oscuro")
+  //   }
+  // }
 
   useEffect(() => {
     const body = document.body
-    body.setAttribute("class", tema)
+    body.setAttribute("class", "mause")
 
     setTimeout(() => {
       body.setAttribute("style", "transition: .5s background-color;")
     }, 1)
-  }, [tema])
+  }, [])
+
+  // const mause = e => {
+  //   console.log("sii")
+  //   console.log(e.pageX)
+  //   // console.log("heit: " + e.pageY)
+  //   console.log(e.pageY - window.top.scrollY)
+  //   // console.log("screen: " + window.innerWidth)
+  //   // console.log(document.documentElement.scrollHeight)
+  //   // console.log("total")
+  //   // console.log(document.documentElement.scrollHeight - window.innerWidth)
+  // }
 
   return (
     <>
@@ -161,6 +180,27 @@ const Layout = ({ children }) => {
         {/*     <StaticImage className="logoty" src="../images/logo.png" alt="Logo" /> */}
 
         {/* <Mause className="mause"></Mause> */}
+        <motion.div
+          animate={{
+            translateX: position.x,
+            translateY: position.y,
+            rotate: position.x,
+          }}
+          className="backgroundMause"
+          style={{
+            position: "fixed",
+            zIndex: "99999",
+            height: "50px",
+            width: "50px",
+            borderRadius: "50%",
+            border: "3px dashed red",
+            clipPath:
+              "polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%)",
+            // backgroundColor: "red",
+            top: "0",
+            left: "0",
+          }}
+        ></motion.div>
 
         <div>
           <Header />

@@ -31,11 +31,11 @@ const Isquierda = styled.div`
   .rayaA {
     height: 100vmax;
     width: 3px;
-    background-color: #fff;
+    background-color: #dde4ff;
   }
 
   a {
-    fill: #fff;
+    fill: #dde4ff;
     margin: 10px 0px;
     transition: 0.2s transform;
     width: 60px;
@@ -48,7 +48,7 @@ const Isquierda = styled.div`
     svg {
       height: 30px;
       width: 30px;
-      fill: "#fff";
+      fill: "#dde4ff";
       transition: 0.5s fill;
 
       path {
@@ -95,22 +95,10 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
 
-  .oscuro & {
-    background-color: #171717;
-    transition: 0.5s background-color;
-  }
-  .claro & {
-    background-color: #fff1;
-    transition: 0.5s background-color;
-  }
-
-  .oscuro & h4 {
+  h4 {
     text-align: center;
+    font-weight: bold;
     color: #dde4ff;
-  }
-  .claro & h4 {
-    text-align: center;
-    color: #fff;
   }
 `
 
@@ -125,7 +113,7 @@ const Footer = () => {
         <div className="rayaA"></div>
         <motion.a
           whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
-          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#dde4ff" }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Linkedin"
           href="https://www.linkedin.com/in/ronny-minda-a44261214/"
@@ -137,7 +125,7 @@ const Footer = () => {
 
         <motion.a
           whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
-          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#dde4ff" }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Correo"
           href="mailto:ronny.michael.minda.vera@gmail.com"
@@ -148,7 +136,7 @@ const Footer = () => {
         </motion.a>
         <motion.a
           whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
-          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#dde4ff" }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
           title="GitHub"
           href="https://github.com/ronny-minda"
@@ -159,7 +147,7 @@ const Footer = () => {
         </motion.a>
         <motion.a
           whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
-          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#dde4ff" }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Twitter"
           href="https://twitter.com/MichaelMinda7"
@@ -170,7 +158,7 @@ const Footer = () => {
         </motion.a>
         <motion.a
           whileHover={{ rotate: 0, scale: 1.6, fill: "#f00" }}
-          whileTap={{ rotate: 0, scale: 1, fill: "#fff" }}
+          whileTap={{ rotate: 0, scale: 1, fill: "#dde4ff" }}
           transition={{ duration: 0.1, ease: "easeInOut" }}
           title="Telefono"
           href="tel:0993105654"
@@ -188,7 +176,7 @@ const Footer = () => {
 
       <Section>
         <h4 id="BACKEND">
-          © Sitio construido por Ronny Minda {new Date().getFullYear()}
+          Sitio construido por Ronny Minda {new Date().getFullYear()}
         </h4>
       </Section>
     </Ffooter>
