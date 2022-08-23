@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 // import { StaticImage } from "gatsby-plugin-image"
 import { motion, AnimatePresence } from "framer-motion"
-// import { v4 as uuidv4 } from "uuid"
+import { v4 as uuidv4 } from "uuid"
 
 // import { imagenes } from "../components/imagenesCarru"
 // import Flecha from "../svg/flecha"
