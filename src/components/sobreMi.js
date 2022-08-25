@@ -1,8 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
-
 import { StaticImage } from "gatsby-plugin-image"
+
+import Javascript from "../svg/javascript"
+import LiteReact from "../svg/react"
+import Sass from "../svg/sass"
+import Node from "../svg/node"
+import Git from "../svg/git"
+import GitHub from "../svg/gitHub"
+
+
+
 
 const Section = styled.section`
   margin: 300px 0;
@@ -19,6 +28,7 @@ const Section = styled.section`
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
 
     .imgPerfil {
       height: 200px;
@@ -34,29 +44,64 @@ const Section = styled.section`
       width: 200px;
       background-color: #2c2c2c;
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 30px;
+      right: 73%;
       z-index: 9;
+    }
+
+    .tecnologias {
+      margin-top: 35px;
+      // background-color: red;
+      height: 50px;
+      width: calc(100% - 17.5px);
+      padding-top: 20px;
+
+      h3 {
+        color: #dde4ff;
+        padding-left: 30px;
+      }
+
+      .conteIco {
+        background-color: #2c2c2c;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        padding: 10px 0;
+
+        svg {
+          margin: 0 8px;
+          height: 50px;
+          width: 50px;
+          fill: #dde4ff;
+        }
+      }
     }
 
     .descripcion {
       h3 {
-        color: #fff;
+        color: #dde4ff;
       }
       p {
         margin-top: 20px;
         width: 500px;
-        color: #fff;
+        color: #dde4ff;
+        
       }
     }
   }
-  @media (max-width: 725px) {
+  @media (max-width: 830px) {
     .conte {
+      // background-color: aqua;
       .imgPerfil {
         height: 150px;
         width: 150px;
+        
       }
       .som {
+        
         height: 150px;
         width: 150px;
       }
@@ -69,8 +114,34 @@ const Section = styled.section`
     }
   }
 
-  @media (max-width: 653px) {
+  @media (max-width: 775px) {
     .conte {
+      
+      flex-direction: column;
+
+      .imgPerfil {
+        height: 150px;
+        width: 150px;
+        margin-bottom: 20px;
+      }
+      .som {
+        top: 15px;
+        left: 175px;
+      }
+
+      .descripcion {
+        h3 {
+        }
+        p {
+          // background-color: aqua;
+          width: 500px;
+        }
+      }
+    }
+  }
+  @media (max-width: 515px) {
+    .conte {
+      
       flex-direction: column;
 
       .imgPerfil {
@@ -87,6 +158,7 @@ const Section = styled.section`
         h3 {
         }
         p {
+          // background-color: red;
           width: 300px;
         }
       }
@@ -126,6 +198,19 @@ const SobreMi = () => {
               desarrollo de api rest de lado backend con node y sus respectivas
               validaciones administracion de roles.
             </p>
+          </div>
+          <div className="tecnologias">
+            <h3>Tecnologias que uso</h3>
+
+            <div className="conteIco">
+              <Javascript />
+              <LiteReact />
+              <Sass />
+              <Node />
+              <Git />
+              <GitHub />
+            </div>
+
           </div>
         </div>
       </motion.div>

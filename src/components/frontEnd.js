@@ -9,6 +9,7 @@ import { imagenes } from "../components/imagenesCarru"
 const Section = styled.section`
   /* background-color: red; */
   position: relative;
+  background-color: #2c2c2c;
 
   h3 {
     color: #dde4ff;

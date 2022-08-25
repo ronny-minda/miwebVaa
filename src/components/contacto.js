@@ -168,6 +168,7 @@ const Contacto = () => {
               autoComplete="email"
               type="text"
               placeholder="E-mail"
+              required
               onChange={e => setEnvio({ ...envio, email: e.target.value })}
             />
           </label>
@@ -178,6 +179,7 @@ const Contacto = () => {
               autoComplete="name"
               type="text"
               placeholder="Nombre"
+              required
               onChange={e => setEnvio({ ...envio, nombre: e.target.value })}
             />
           </label>
@@ -187,6 +189,7 @@ const Contacto = () => {
           <textarea
             value={envio.mensaje}
             placeholder="Mensaje"
+            required
             onChange={e => setEnvio({ ...envio, mensaje: e.target.value })}
           ></textarea>
         </label>
