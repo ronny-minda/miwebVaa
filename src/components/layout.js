@@ -56,12 +56,6 @@ const Global = createGlobalStyle`
     border-radius: 10px;
   }
 
-  
-
-
-  
-
-
   .logoty {
     position: fixed;
     z-index: 0;
@@ -193,10 +187,10 @@ const Layout = ({ children }) => {
             height: "50px",
             width: "50px",
             borderRadius: "50%",
-            border: "3px dashed red",
+            border: "3px solid black",
             clipPath:
-              "polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%)",
-            // backgroundColor: "red",
+              "polygon(0% 0%, 0% 100%, 10% 100%, 10% 8%, 90% 7%, 89% 90%, 3% 91%, 5% 100%, 100% 100%, 100% 0%)",
+            backgroundColor: "red",
             top: "0",
             left: "0",
           }}

@@ -161,8 +161,8 @@ const BackEnd = () => {
                   <div className="iz">
                     <h3>{titulo}</h3>
                     <h4>Tecnologias</h4>
-                    {tecnologias.map((i, e) => (
-                      <li>- {i}</li>
+                    {tecnologias.map(i => (
+                      <li key={i}>- {i}</li>
                     ))}
                     <a href={link} target="_blank" rel="noopener noreferrer">
                       Ver codigo
