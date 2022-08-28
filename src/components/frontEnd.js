@@ -9,7 +9,20 @@ import { imagenes } from "../components/imagenesCarru"
 const Section = styled.section`
   /* background-color: red; */
   position: relative;
-  background-color: #2c2c2c;
+  background-color: #141414;
+
+  &:hover {
+    .conteFron {
+      .topBorde {
+        height: 30%;
+        width: 30%;
+      }
+      .bottBorde {
+        height: 30%;
+        width: 30%;
+      }
+    }
+  }
 
   h3 {
     color: #dde4ff;
@@ -23,12 +36,38 @@ const Section = styled.section`
     height: 500px;
     /* width: 500px; */
     display: block;
-    background-color: red;
-    border: 2px solid red;
+
+    /* background-color: red; */
+    /* border: 2px double red; */
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     position: relative;
-    /* padding: 40px; */
+
+    .topBorde {
+      z-index: 99999;
+      border-top: 6px solid red;
+      border-left: 6px solid red;
+      height: 10%;
+      width: 10%;
+      /* background-color: blue; */
+      position: absolute;
+      top: -0px;
+      left: -0px;
+      transition: 0.2s;
+    }
+
+    .bottBorde {
+      z-index: 99999;
+      border-bottom: 6px solid red;
+      border-right: 6px solid red;
+      height: 10%;
+      width: 10%;
+      /* background-color: red; */
+      position: absolute;
+      bottom: -0px;
+      right: -0px;
+      transition: 0.2s;
+    }
 
     img {
       left: 0;
@@ -37,7 +76,7 @@ const Section = styled.section`
       height: 100%;
       width: 100%;
       object-fit: cover;
-      background-color: #f00;
+      /* background-color: #f00; */
       /* border: 5px solid red; */
     }
 
@@ -114,18 +153,125 @@ const Section = styled.section`
         margin-bottom: 8px;
         -webkit-text-stroke: 2px #0004;
       }
-      a {
-        text-align: center;
+
+      .button {
         text-decoration: none;
-        color: #dde4ff;
-        background-color: #f00;
-        padding: 10px 25px;
-        font-size: 20px;
-        transition: 0.3s;
-        border-radius: 4px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.15s ease;
       }
-      a:hover {
-        background-color: #ff5555;
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7d8082;
+        transition: all 0.15s ease;
+      }
+
+      .button::before {
+        top: 0;
+        border-bottom-width: 0;
+      }
+
+      .button::after {
+        bottom: 0;
+        border-top-width: 0;
+      }
+
+      .button:active,
+      .button:focus {
+        outline: none;
+      }
+
+      .button:active::before,
+      .button:active::after {
+        right: 3px;
+        left: 3px;
+      }
+
+      .button:active::before {
+        top: 3px;
+      }
+
+      .button:active::after {
+        bottom: 3px;
+      }
+
+      .button_lg {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #dde4ff;
+        background-color: #141414;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .button_lg::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #141414;
+      }
+
+      .button_lg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #141414;
+        transition: all 0.2s ease;
+      }
+
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #f00;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+      }
+
+      .button_text {
+        position: relative;
+      }
+
+      .button:hover {
+        color: #141414;
+      }
+
+      .button:hover .button_sl {
+        width: calc(100% + 15px);
+      }
+
+      .button:hover .button_lg::after {
+        background-color: #dde4ff;
       }
     }
   }
@@ -159,6 +305,9 @@ const FromEnd = () => {
             />
           </AnimatePresence>
 
+          <div className="topBorde"></div>
+          <div className="bottBorde"></div>
+
           <div
             onClick={() => {
               setDirection(false)
@@ -182,7 +331,20 @@ const FromEnd = () => {
 
           <div className="link">
             <h5>{imagenes[imgesta].titulo}</h5>
-            <motion.a
+
+            <a
+              href={imagenes[imgesta].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button"
+            >
+              <span className="button_lg">
+                <span className="button_sl"></span>
+                <span className="button_text">Ver Codigo GitHub</span>
+              </span>
+            </a>
+
+            {/* <motion.a
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 1 }}
               transition={{ duration: 0.1, ease: "easeInOut" }}
@@ -192,7 +354,7 @@ const FromEnd = () => {
               rel="noopener noreferrer"
             >
               Ver Codigo GitHub
-            </motion.a>
+            </motion.a> */}
           </div>
         </div>
       </motion.div>

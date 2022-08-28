@@ -121,7 +121,7 @@ const Logo = ({ color }) => {
       >
         <path
           style={{
-            // transition: "0.5s fill",
+            transition: "0.5s fill",
             display: "inline",
             fill: "#932727",
             fillOpacity: 1,

@@ -11,7 +11,7 @@ import Telefono from "../svg/telefono"
 const Ffooter = styled.footer`
   /* display: flex; */
   /* position: absolute; */
-  background-color: #2c2c2c;
+  background-color: #141414;
   margin-top: 150px;
   height: 100px;
 `

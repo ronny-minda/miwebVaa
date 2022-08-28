@@ -32,6 +32,13 @@ const Principal = () => {
               // layout="constrained"
             /> */}
           </div>
+
+          <div className="scrolldown">
+            <div className="chevrons">
+              <div className="chevrondown"></div>
+              <div className="chevrondown"></div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </>

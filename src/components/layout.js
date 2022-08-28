@@ -6,6 +6,7 @@ import { useLocation } from "@reach/router"
 
 import Footer from "./footer"
 import Header from "./header"
+import imgtextura from "../images/textura.png"
 
 import Luna from "../svg/luna"
 import Sol from "../svg/sol"
@@ -42,13 +43,23 @@ const Global = createGlobalStyle`
     /* position: absolute; */
     width: 100%;
     background-color: #1C1C1C;
+
     /* overflow-x: hidden; */
     
     
   }
+
+  .textura {
+    background-image: url(${imgtextura});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
   body::-webkit-scrollbar {
     width: 4px;
-    background-color: #f008;
+    background-color: #f00;
   }
 
   body::-webkit-scrollbar-thumb {
@@ -149,11 +160,10 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const body = document.body
-    body.setAttribute("class", "mause")
 
     setTimeout(() => {
-      body.setAttribute("style", "transition: .5s background-color;")
-    }, 1)
+      body.setAttribute("class", "textura")
+    }, 2000)
   }, [])
 
   // const mause = e => {
@@ -186,17 +196,22 @@ const Layout = ({ children }) => {
             zIndex: "99999",
             height: "50px",
             width: "50px",
-            borderRadius: "50%",
-            border: "3px solid black",
+            // borderRadius: "50%",
+            // border: "3px solid black",
             clipPath:
-              "polygon(0% 0%, 0% 100%, 10% 100%, 10% 8%, 90% 7%, 89% 90%, 3% 91%, 5% 100%, 100% 100%, 100% 0%)",
+              "polygon(0 100%, 0 0, 15% 0, 0 17%, 0 83%, 15% 100%, 100% 100%, 100% 0, 79% 0, 100% 20%, 100% 83%, 81% 100%)",
             backgroundColor: "red",
             top: "0",
             left: "0",
           }}
         ></motion.div>
 
-        <div>
+        <div
+          style={{
+            background:
+              "linear-gradient(270deg, #000000ee 10%, #2c2c2cdd 100%)",
+          }}
+        >
           <Header />
           {children} {/* LLega el cuerpo de pagina! */}
           <Footer />

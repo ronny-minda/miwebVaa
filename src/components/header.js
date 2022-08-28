@@ -19,7 +19,12 @@ const HHeader = styled.header`
 
   a {
     font-size: 22px;
-    margin: 0 40px;
+    /* margin: 0 40px; */
+    /* width: 177px; */
+    width: 100%;
+
+    display: inline-block;
+    text-align: center;
     svg {
       /* background-color: #0FF; */
       height: 60px;
@@ -34,10 +39,12 @@ const HHeader = styled.header`
     display: flex;
 
     li {
+      width: 177px;
       list-style: none;
       a {
         text-decoration: none;
         color: #fff;
+        width: 100%;
       }
       .under {
         height: 1px;
