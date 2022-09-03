@@ -14,7 +14,7 @@ import Html from "../svg/html"
 import Css from "../svg/css"
 import Next from "../svg/next"
 
-import curriculum from "../archivos/curriculum.pdf"
+import curriculum from "../archivos/curriculum1.pdf"
 
 const Section = styled.section`
   margin: 300px 0;
