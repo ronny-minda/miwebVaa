@@ -13,6 +13,10 @@ function Seo({ titulo }) {
         name="google-site-verification"
         content="cChVu7MlRZTNnxm1MJi5q8EoC8-87P0Qbx2NUcHKJCk"
       />
+      <meta
+        name="google-site-verification"
+        content="VfzAKHwjf9TtB4QzlFHlntf-XJMI77x-l4UEF4uBi2s"
+      />
       <meta charset="UTF-8"></meta>
       <meta
         name="description"
@@ -69,8 +73,15 @@ function Seo({ titulo }) {
       {/* whatsapp */}
 
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;900&display=swap" rel="stylesheet"></link>
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+      ></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;900&display=swap"
+        rel="stylesheet"
+      ></link>
 
       <script>
         console.log( "%cHola! ¿Interesado en ofrecerme un puesto en su empresa?
